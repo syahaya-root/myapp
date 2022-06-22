@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Search</h1>
+<%= form_tag(bootcamps_path, method: "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Bootcamps" %>
+  <%= submit_tag "Search Bootcamps"%>
+<% end %>
+<h1>Listing Bootcamps</h1>
+
+<h1>Bootcamps</h1>
+
+<div id="bootcamps">
+  <% @bootcamps.each do |bootcamp| %>
+    <%= render bootcamp %>
+    <p>
+      <%= link_to "Show this bootcamp", bootcamp %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New bootcamp", new_bootcamp_path %>

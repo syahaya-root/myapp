@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %>
+	<strong>Description:</strong>
+	<%=raw @bootcamp.description %>
+</p>
+
+<%= render @bootcamp %>
+
+<div>
+  <%= link_to "Edit this bootcamp", edit_bootcamp_path(@bootcamp) %> |
+  <%= link_to "Back to bootcamps", bootcamps_path %>
+
+  <%= button_to "Destroy this bootcamp", @bootcamp, method: :delete %>
+</div>
